@@ -1,0 +1,23 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  text-align: center;
+  min-width: 320px;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
