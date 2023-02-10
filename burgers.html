@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burgers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/burgers.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1>Hamburger buttons</h1>
+    </header>
+    <main>
+      <div class="examples">
+
+        <!-- Button one -->
+        <button class="button-one" aria-controls="primary-navigation" aria-expanded="false">
+          <svg fill="var(--button-color)" class="hamburger" viewBox="0 0 100 100" width="250">
+            <rect class="line top" width="80" height="10" x="10" y="25" rx="5">
+            </rect>
+            <rect class="line middle" width="80" height="10" x="10" y="45" rx="5">
+            </rect>
+            <rect class="line bottom" width="80" height="10" x="10" y="65" rx="5">
+            </rect>
+          </svg>
+        </button>
+      
+        <!-- Button two -->
+        <button class="button-two" aria-expanded="false">
+          <svg stroke="var(--button-color)" class="hamburger" viewBox="0 0 100 100" width="250">
+            <line class="line top" x1="90" x2="10" y1="40" y2="40" stroke-width="10" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0">
+            </line>
+            <line class="line bottom" x1="10" x2="90" y1="60" y2="60" stroke-width="10" stroke-linecap="round" stroke-dasharray="80" stroke-dashoffset="0">
+            </line>
+          </svg>
+        </button>
+      
+        <!-- Button three -->
+        <button class="button-three" aria-controls="primary-navigation" aria-expanded="false">
+          <svg stroke="var(--button-color)" fill="none" class="hamburger" viewBox="-10 -10 120 120" width="250">
+            <path class="line" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70">
+            </path>
+          </svg>
+        </button>
+      
+      </div>
+      <a href="index.html">
+        <button>click to return home</button>
+      </a>
+
+    </main>
+    <script>
+      const buttons = document.querySelectorAll("button");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const currentState = button.getAttribute("data-state");
+
+          if (!currentState || currentState === "closed") {
+            button.setAttribute("data-state", "opened");
+            button.setAttribute("aria-expanded", "true");
+          } else {
+            button.setAttribute("data-state", "closed");
+            button.setAttribute("aria-expanded", "false");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
