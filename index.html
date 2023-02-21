@@ -29,8 +29,18 @@
         <button>click to see burgers</button>
       </a>
       <hr>
-      <h2>APOD</h2>
-      <div id="app"></div>
+      <!-- <h2>APOD</h2> -->
+      <div id="app">
+        <h3 id="demo"></h3>
+        <form>
+          <div>
+            <label for="cvc">Enter your CVC <popup-info
+              img="img/alt.png"
+              data-text="Your card validation code (CVC) is an extra security feature — it is the last 3 or 4 numbers on the back of your card."></popup-info></label>
+            <input type="text" id="cvc">    
+          </div>
+        </form>
+      </div>
     </main>
     <script type="module" src="./scripts/main.js"></script>
   </body>
